@@ -7,10 +7,12 @@ const CommentsForm = ({ text }) => {
       onSubmit={(event) => {
         text(commentText);
         event.preventDefault();
+        this.input.value='';
       }}
     >
       <input
         className="input input-text"
+        ref = {input => {this.input = input}}
         onChange={(e) => (commentText = e.target.value)}
       />
       <input className="input input-submit" type="submit" value="Submit" />
